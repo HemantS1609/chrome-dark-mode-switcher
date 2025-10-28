@@ -9,12 +9,20 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: resolve(__dirname, "src/popup/popup.html"),
+        background: resolve(__dirname, "src/background/background.ts"),
+        content: resolve(__dirname, "src/content/contentScript.ts"),
       },
       output: {
         entryFileNames: "assets/[name].js",
         chunkFileNames: "assets/[name].js",
         assetFileNames: "assets/[name].[ext]",
       },
+    },
+  },
+  publicDir: "public", // ensures manifest.json & icons are copied
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
     },
   },
 });

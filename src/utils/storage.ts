@@ -1,4 +1,4 @@
-import { ThemeState } from "../features/theme/themeTypes";
+import type { ThemeState } from "../features/theme/themeTypes";
 
 export const saveThemeToStorage = async (theme: ThemeState) => {
   await chrome.storage.sync.set(theme);
