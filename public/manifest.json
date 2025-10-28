@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Mode + Theme Customizer",
+  "version": "1.0.0",
+  "description": "Toggle dark mode and customize theme color on any site.",
+  "icons": {
+    "16": "icon64.png",
+    "48": "icon64.png",
+    "128": "icon64.png"
+  },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/contentScript.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
